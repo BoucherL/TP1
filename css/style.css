@@ -1,0 +1,32 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+html{
+    background-color: antiquewhite;
+}
+
+.L_Form{
+    border: solid black 1px;
+    background-color: rgb(235, 233, 230);
+    width: 15%;
+    margin: 10% auto;
+    padding: 15vh 1vw;
+    text-align: center;
+}
+.L_Form input{
+    margin: 0.3vh auto 2vh auto;
+    background-color: white;
+}
+
+.L_Form input[type="text"], .L_Form input[type="password"]{
+    margin-top: 1vh;
+    padding: 0.5vh 0.2vh;
+    text-align: center;
+}
+
+.L_Form input[type="submit"]{
+    margin-top: 4vh;
+    padding: 0.5vh 5vh;
+}
