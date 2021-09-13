@@ -6,27 +6,7 @@ $ValueValid = "";
 try{
     if (isset($_POST["inscription"])) {
 
-        // Inscription si les champs ne sont pas vides et si le nom d'utilisateur n'est pas utilisé
-        if(!empty($_POST['username']) AND !empty($_POST['password'])){
-
-            $exist = $BDD->query("SELECT COUNT(*) FROM user WHERE username ='".$_POST['username']."'");
-            $exist = $exist->fetch();
-
-            if ($exist["COUNT(*)"] > 0) {
-                $ValueValid = "Ce nom d'utilisateur est déja utilisé";
-            } 
-            else {
-                $insert = $BDD->query("INSERT INTO user(username, Password) VALUES('".$_POST['username']."','".$_POST['password']."')");
-                print_r("INSERT INTO user(username, Password) VALUES('".$_POST['username']."','".$_POST['password']."')");
-                
-                if($insert->rowCount()>=1){
-                    header("Location: ship.php");
-                }
-                else {
-                    echo "Une erreur est survenue";
-                }
-            }
-        }
+        $ValueValid = 'ok';
         
         else {
                 $ValueValid = 'Veuillez compléter tout les champs...';
