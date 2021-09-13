@@ -1,69 +1,41 @@
 <?php
+session_start();
+include "functions.php";
 
-    include "function.php";
+$ValueValid = "";
+try{
+    if (isset($_POST["submit"])) {
 
-    if(isset($_POST['inscription']))
-    {
-        $pseudo = htmlspecialchars($_POST['pseudo']);
-        $mail = htmlspecialchars($_POST['mail']);
-        $mail2 = htmlspecialchars($_POST['mail2']);
+        // Inscription si les champs ne sont pas vides et si le nom d'utilisateur n'est pas utilisé
+        if(!empty($_POST['username']) AND !empty($_POST['passsword'])){
 
-            if(!empty($_POST['pseudo']) AND !empty($_POST['mail']) AND !empty($_POST['mail2']) AND !empty($_POST['mdp']) AND !empty($_POST['mdp2']))
-            {
-                $pseudoLenght = strlen($pseudo);
-                if($pseudoLenght >= 2)
-                {
-                    $reqPseudo = $bdd->prepare('SELECT * FROM espace_membre WHERE pseudo = ?');
-                    $reqPseudo->execute(array($pseudo));
-                    $pseudoExist = $reqPseudo->rowCount();
+            $exist = $BDD->query("SELECT COUNT(*) FROM user WHERE username ='".$_POST['username']."'");
+            $exist = $exist->fetch();
 
-                    if($pseudoExist == 0)
-                    {
-                        if($mail == $mail2)
-                        {
-                            if(filter_var($mail, FILTER_VALIDATE_EMAIL))
-                            {
-                                $reqMail = $bdd->prepare('SELECT * FROM espace_membre WHERE mail = ?');
-                                $reqMail->execute(array($mail));
-                                $mailExist = $reqMail->rowCount();
-                                
-                                if($mailExist == 0)
-                                {
-                                    if($mdp == $mdp2)
-                                    {
-                                        $validMember = $bdd->prepare('INSERT INTO espace_membre(pseudo, mail, mdp) VALUES (?, ?, ?)');
-                                        $validMember->execute(array($pseudo, $mail, $mdp));
-                                        $erreur = "Votre compte à bien été créé. <a href='connexion.php'>Me connecter</a>";
-                                    } else
-                                    {
-                                        $erreur = "Vos mot de passe ne correspondent pas.";
-                                    }
-                                } else
-                                {
-                                    $erreur = "Votre adresse mail déjà utilisée.";
-                                }
-                            } else
-                            {
-                                $erreur = "Veuillez entrer une adresse mail valide.";
-                            }
-                        } else
-                        {
-                            $erreur = "Vos adresses mails ne correspondent pas.";
-                        }
-                    }else
-                    {
-                        $erreur = "Votre pseudo est déjà utilisé";
-                    }
-                } else
-                {
-                    $erreur = "Votre pseudo est trop court.";
+            if ($exist["COUNT(*)"] > 0) {
+                $ValueValid = "Ce nom d'utilisateur est déja utilisé";
+            } 
+            else {
+                $insert = $BDD->query("INSERT INTO User(username, Password) VALUES('".$_POST['username']."','".$_POST['password']."')");
+                
+                if($insert->rowCount()>=1){
+                    header("Location: ship.php");
                 }
-
-            } else 
-            {
-                $erreur = "Tous les champs doivent être remplis.";
+                else {
+                    echo "Une erreur est survenue";
+                }
             }
+        }
+        
+        else {
+                $ValueValid = 'Veuillez compléter tout les champs...';
+            }
+
     }
+}
+catch(Exception $e){
+    echo "J'ai eu un problème erreur :".$e->getMessage();
+}
 ?>
 
 <!DOCTYPE html>
@@ -96,20 +68,6 @@
 
                 <tr>
                     <td>
-                        <label for="mail"> Mail : </label>
-                        <input type="email" placeholder="Votre mail" name="mail" id="mail"  value="<?php if(isset($mail)) { echo $mail; }?>"/>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <label for="mail2"> Confirmation du mail : </label>
-                        <input type="email" placeholder="Confirmez votre mail" name="mail2" id="mail2"  value="<?php if(isset($mail2)) { echo $mail2; }?>" />
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
                         <label for="mdp"> Mot de passe : </label>
                         <input type="password" placeholder="Votre mot de passe" name="mdp" id="mdp"  value="<?php if(isset($mdp)) { echo $mdp; }?>" />
                     </td>
@@ -117,24 +75,11 @@
 
                 <tr>
                     <td>
-                        <label for="mdp2"> Confirmation du mot de passe : </label>
-                        <input type="password" placeholder="Confirmez votre mot de passe" name="mdp2" id="mdp2"  value="<?php if(isset($mdp2)) { echo $mdp2; }?>"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
                         <input type="submit" name="inscription" value="S'inscrire">
                     </td>
                 </tr>
             </table>
         </form>
-
-        <?php
-            if(isset($erreur))
-            {
-                echo '<strong><font color="red">'.$erreur.'</font></strong>';
-            }
-        ?>
 
     </div>
 </body>
