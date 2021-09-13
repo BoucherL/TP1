@@ -28,9 +28,7 @@ $LoginValid = "";
                 connection($BDD);
             }
         }
-        else{
-            echo 'no';
-        }
+        else{}
     }
 
     catch(Exception $e){
