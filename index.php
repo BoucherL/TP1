@@ -4,8 +4,6 @@ include "functions.php";
 
 $LoginValid = "";
 
-connexion($BDD);
-
 ?>
 
 <!DOCTYPE html>
