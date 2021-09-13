@@ -17,24 +17,6 @@ $LoginValid = "";
 
   <div class="Contenu">
 
-<?php 
-  try{
-        if(connection($BDD)){
-            if(check()){
-                ?><script>console.log('true')</script><?php
-            }
-            else{
-                connection($BDD);
-                ?><script>console.log('false')</script><?php
-            }
-        }
-    }
-
-    catch(Exception $e){
-        echo "J'ai eu un problème erreur :".$e->getMessage();
-    }
-?>
-
     <div class="container">
 
         <form action="index.php" method="post">
@@ -49,14 +31,6 @@ $LoginValid = "";
             <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
             <input type="submit" id='submit' value='LOGIN' >
-
-            <?php
-                if(isset($_GET['erreur'])){
-                    $err = $_GET['erreur'];
-                    if($err==1 || $err==2)
-                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                }
-            ?>
         </form>
     </div>
 
