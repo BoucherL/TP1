@@ -26,6 +26,7 @@ form {
 /* Full-width inputs */
 input[type=text], input[type=password] {
     width: 80%;
+    margin: 1vh auto 2vh auto;
     padding: 12px 20px;
     margin: 8px 0;
     display: block;
@@ -55,6 +56,6 @@ input[type=submit]:hover {
         }
 
     input[type=text], input[type=password] {
-        width: 40%;
+        width: 55%;
     }
 }
