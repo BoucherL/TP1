@@ -16,7 +16,7 @@ try{
                 $ValueValid = "Ce nom d'utilisateur est déja utilisé";
             } 
             else {
-                $insert = $BDD->query("INSERT INTO User(username, Password) VALUES('".$_POST['username']."','".$_POST['password']."')");
+                $insert = $BDD->query("INSERT INTO user(username, Password) VALUES('".$_POST['username']."','".$_POST['password']."')");
                 
                 if($insert->rowCount()>=1){
                     header("Location: ship.php");
