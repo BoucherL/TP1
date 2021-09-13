@@ -18,6 +18,23 @@ $LoginValid = "";
 
   <div class="Contenu">
 
+  <?php 
+    try{
+            if(connection($BDD)){
+                if(check()){
+                    echo'ok';
+                }
+                else{
+                    echo'no';
+                }
+            }
+        }
+
+        catch(Exception $e){
+            echo "J'ai eu un problème erreur :".$e->getMessage();
+        }
+    ?>
+
     <div class="container">
 
         <form action="index.php" method="post">

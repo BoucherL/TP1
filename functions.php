@@ -9,26 +9,16 @@ catch(Exception $e){
     }
 
 
-
-function check() {
-    if ($_SESSION["Logged"] !== true) {
-      return false;
-    }else{
-        return true;
-    }
-}
-
 // Connexion
 function connection($BDD){
 
-    if(isset($_POST['user']) && isset($_POST['passwd'])){
+    if(isset($_POST['user'])){
        
         $Result = $BDD->query("SELECT * FROM `user` WHERE `user`='".$_POST['user']."' AND `passwd` = '".$_POST['passwd']."'");
         if($Result->rowCount()>0){
             $tab = $Result->fetch();
             $_SESSION["Logged"] = true;
             $_SESSION["ID_User"] = $tab['id'];
-            $_SESSION["IsAdmin"] = $tab['IsAdmin'];
             
             return true;
         }else{
@@ -37,11 +27,3 @@ function connection($BDD){
     }
 
 } 
-
-//Déconnexion
-if(isset($_POST["Disconnect"])){
-    $_SESSION["Logged"] = false;
-}
-
-
-?>
