@@ -12,9 +12,9 @@ catch(Exception $e){
 // Connexion
 function connection($BDD){
 
-    if(isset($_POST['user'])){
+    if(isset($_POST['username'])){
        
-        $Result = $BDD->query("SELECT * FROM `user` WHERE `user`='".$_POST['user']."' AND `passwd` = '".$_POST['passwd']."'");
+        $Result = $BDD->query("SELECT * FROM `user` WHERE `user`='".$_POST['username']."' AND `passwd` = '".$_POST['password']."'");
         if($Result->rowCount()>0){
             $tab = $Result->fetch();
             $_SESSION["Logged"] = true;
