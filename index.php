@@ -22,10 +22,10 @@ $LoginValid = "";
     try{
             if(connection($BDD)){
                 if(check()){
-                    echo'ok';
+                    ?><script>console.log('ok')</script><?php;
                 }
                 else{
-                    echo'no';
+                    ?><script>console.log('Nok')</script><?php;
                 }
             }
         }

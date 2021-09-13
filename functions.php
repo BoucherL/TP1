@@ -13,6 +13,8 @@ catch(Exception $e){
 function connection($BDD){
 
     if(isset($_POST['user'])){
+
+        ?><script>console.log('isset')</script><?php;
        
         $Result = $BDD->query("SELECT * FROM `user` WHERE `user`='".$_POST['user']."' AND `passwd` = '".$_POST['passwd']."'");
         if($Result->rowCount()>0){
