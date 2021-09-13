@@ -2,34 +2,34 @@
     class userConnexion{
 
         //Propriétés
-        public $serveur;
-        public $user;
-        public $passwd;
-        public $bdd;
-        public $admin;
+        private $user;
+        private $passwd;
+        private $admin;
 
         //Méthodes
-        public function __construct($serveur, $user, $passwd, $bdd){
+        function __construct($serveur, $user, $passwd){
 
             $this->user = $user;
             $this->passwd = $passwd;
-            $this->bdd = $bdd;
             $this->admin = $admin;
         }
 
-        public function SeConnecter(){
+        public function SeConnecter($user,$passwd,$admin){
 
         }
 
-        public function Inscription(){
+        public function Inscription($user,$passwd){
 
         }
 
         public function SeDeconnecter(){
 
         }
-        public function modifpassword(){
+        public function modifpassword($user,$passwd){
             
+        }
+        public function admin(){
+
         }
 
 }
