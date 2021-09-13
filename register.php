@@ -3,40 +3,9 @@ session_start();
 include "functions.php";
 
 $ValueValid = "";
-try{
-    if (isset($_POST["submit"])) {
 
-        // Inscription si les champs ne sont pas vides et si le nom d'utilisateur n'est pas utilisé
-        if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){
+// - Add Inscription Form
 
-            $exist = $BDD->query("SELECT COUNT(*) FROM user WHERE user ='".$_POST['pseudo']."'");
-            $exist = $exist->fetch();
-
-            if ($exist["COUNT(*)"] > 0) {
-                $ValueValid = "Ce nom d'utilisateur est déja utilisé";
-            } 
-            else {
-                $insert = $BDD->query("INSERT INTO user(user, passwq) VALUES('".$_POST['pseudo']."','".$_POST['mdp']."')");
-                
-                if($insert->rowCount()>=1){
-                    header("Location: ship.php");
-                }
-                else {
-                    echo "Une erreur est survenue";
-                }
-            }
-        }
-        
-        else {
-                $ValueValid = 'Veuillez compléter tout les champs...';
-            }
-
-    }
-    else{}
-}
-catch(Exception $e){
-    echo "J'ai eu un problème erreur :".$e->getMessage();
-}
 ?>
 
 <!DOCTYPE html>
