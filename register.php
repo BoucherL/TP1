@@ -4,7 +4,7 @@ include "functions.php";
 
 $ValueValid = "";
 try{
-    if (isset($_POST["inscription"])) {
+    if (isset($_POST["submit"])) {
 
         // Inscription si les champs ne sont pas vides et si le nom d'utilisateur n'est pas utilisé
         if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){
@@ -32,6 +32,7 @@ try{
             }
 
     }
+    else{}
 }
 catch(Exception $e){
     echo "J'ai eu un problème erreur :".$e->getMessage();
@@ -75,7 +76,7 @@ catch(Exception $e){
 
                 <tr>
                     <td>
-                        <input type="submit" name="inscription" value="S'inscrire">
+                        <input type="submit" name="submit" value="S'inscrire">
                     </td>
                 </tr>
             </table>
