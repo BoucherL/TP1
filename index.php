@@ -50,7 +50,7 @@ $LoginValid = "";
             <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
             <input type="submit" class='submit' value='LOGIN' >
-            <input type="button" class='submit' value="S'inscrire" onclick="header('location: register.php');" >
+            <p> Pas de compte ? <a href="register.php">Inscrivez-vous</a></p>
         </form>
     </div>
 
