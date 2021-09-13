@@ -9,6 +9,7 @@ html{
 /* Bordered form */
 form {
     width:60%;
+    margin: 5vh auto;
     padding: 30px;
     border: 1px solid #f1f1f1;
     background: #fff;
