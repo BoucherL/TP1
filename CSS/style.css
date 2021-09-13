@@ -9,7 +9,7 @@ html{
 
 .container{
     background-color: white;
-    width: 70%;
+    width: max-content;
     margin: 3vh auto;
     padding: 2vh;
 }
