@@ -36,7 +36,7 @@ $LoginValid = "";
 
     <div class="container">
 
-        <form action="" method="post">
+        <form action="index.php" method="post">
 
             <h1>Connexion</h1>
             <b class='LoginValid'><?php echo $LoginValid ?></b>
