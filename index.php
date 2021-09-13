@@ -19,19 +19,24 @@ $LoginValid = "";
   <div class="Contenu">
 
   <?php 
-    try{
-            if(connection($BDD)){
-                echo'ok';
+  try{
+        if(connection($BDD)){
+            if(check()){
+                echo'yes';
             }
             else{
-                echo'no';
+                connection($BDD);
             }
         }
-
-        catch(Exception $e){
-            echo "J'ai eu un problème erreur :".$e->getMessage();
+        else{
+            echo 'no';
         }
-    ?>
+    }
+
+    catch(Exception $e){
+        echo "J'ai eu un problème erreur :".$e->getMessage();
+    }
+?>
 
     <div class="container">
 

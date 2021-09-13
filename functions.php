@@ -27,3 +27,11 @@ function connection($BDD){
     }
 
 } 
+
+function check() {
+    if ($_SESSION["Logged"] !== true) {
+      return false;
+    }else{
+        return true;
+    }
+}
