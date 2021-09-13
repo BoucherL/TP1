@@ -22,7 +22,7 @@ $LoginValid = "";
   try{
         if(connection($BDD)){
             if(check()){
-                header('location: register.php');
+                header('location: compte.php');
             }
             else{
                 connection($BDD);
