@@ -2,6 +2,11 @@
     margin: 0%;
     padding: 0%;
 }
-body{
+
+html{
     background: #67BE4B;
+}
+
+.container{
+    background-color: aliceblue;
 }
