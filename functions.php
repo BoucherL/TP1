@@ -29,7 +29,7 @@ function connection($BDD){
             $_SESSION["Logged"] = true;
             $_SESSION["ID_User"] = $tab['id'];
             $_SESSION["IsAdmin"] = $tab['IsAdmin'];
-            header("Location: index.php");
+            header("Location: verification.php");
             
             return true;
         }else{
