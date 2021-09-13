@@ -21,10 +21,11 @@ $LoginValid = "";
   try{
         if(connection($BDD)){
             if(check()){
-                header("location: verification.php");
+                ?><script>console.log('true')</script><?php
             }
             else{
                 connection($BDD);
+                ?><script>console.log('false')</script><?php
             }
         }
     }
