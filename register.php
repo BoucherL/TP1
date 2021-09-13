@@ -5,10 +5,10 @@ include "functions.php";
 $ValueValid = "";
 try{
     if (isset($_POST["inscription"])) {
-
+        echo'set'
         // Inscription si les champs ne sont pas vides et si le nom d'utilisateur n'est pas utilisé
         if(!empty($_POST['username']) AND !empty($_POST['password'])){
-
+            'not empty'
             $exist = $BDD->query("SELECT COUNT(*) FROM user WHERE username ='".$_POST['username']."'");
             $exist = $exist->fetch();
 
