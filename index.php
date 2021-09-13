@@ -4,12 +4,7 @@ include "functions.php";
 
 $LoginValid = "";
 
-if(connection($BDD)){
-    echo"yes";
-}
-else{
-    echo"no";
-}
+connexion($BDD);
 
 ?>
 
