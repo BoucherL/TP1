@@ -6,3 +6,15 @@
 html{
     background-color: #53af57;
 }
+
+.container{
+    background-color: white;
+    width: 70%;
+    margin: 3vh auto;
+    padding: 2vh;
+}
+
+form h1, form input, form b, form label{
+    display: block;
+    margin: 1vh auto 2vh auto;
+}
