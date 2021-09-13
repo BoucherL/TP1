@@ -17,6 +17,7 @@ try{
             } 
             else {
                 $insert = $BDD->query("INSERT INTO user(username, Password) VALUES('".$_POST['username']."','".$_POST['password']."')");
+                print_r("INSERT INTO user(username, Password) VALUES('".$_POST['username']."','".$_POST['password']."')");
                 
                 if($insert->rowCount()>=1){
                     header("Location: ship.php");
