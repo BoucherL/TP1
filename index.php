@@ -21,12 +21,10 @@ $LoginValid = "";
   <?php 
     try{
             if(connection($BDD)){
-                if(check()){
-                    echo'ok';
-                }
-                else{
-                    echo'no';
-                }
+                echo'ok';
+            }
+            else{
+                echo'no';
             }
         }
 
