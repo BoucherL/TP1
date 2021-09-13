@@ -1,35 +1,37 @@
 <?php
-    class userConnexion{
+    class User{
 
         //Propriétés
-        public $serveur;
-        public $user;
-        public $passwd;
-        public $bdd;
-        public $admin;
+        private $_user;
+        private $_passwd;
+        private $_admin;
+        private $_bdd;
 
         //Méthodes
-        public function __construct($serveur, $user, $passwd, $bdd){
+        function __construct($user,$passwd,$admin,$bdd){
 
-            $this->user = $user;
-            $this->passwd = $passwd;
-            $this->bdd = $bdd;
-            $this->admin = $admin;
+            $this->_user = $user;
+            $this->_passwd = $passwd;
+            $this->_admin = $admin;
+            //$this->_bdd = new PDO('mysql:host=192.168.64.204; dbname=TP1; charset=utf8','admin', 'admin');
         }
 
-        public function SeConnecter(){
+        public function SeConnecter($user,$passwd,$admin){
 
         }
 
-        public function Inscription(){
+        public function Inscription($user,$passwd){
 
         }
 
         public function SeDeconnecter(){
 
         }
-        public function modifpassword(){
+        public function modifpassword($user,$passwd){
             
+        }
+        public function admin(){
+
         }
 
 }
