@@ -13,7 +13,7 @@
             $this->_user = $user;
             $this->_passwd = $passwd;
             $this->_admin = $admin;
-            $this->_bdd = $bdd;
+            //$this->_bdd = new PDO('mysql:host=192.168.64.204; dbname=TP1; charset=utf8','admin', 'admin');
         }
 
         public function SeConnecter($user,$passwd,$admin){
