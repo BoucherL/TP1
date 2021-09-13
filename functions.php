@@ -21,7 +21,7 @@ function check() {
 // Connexion
 function connection($BDD){
 
-    if(isset($_POST['user'])){
+    if(isset($_POST['user']) && isset($_POST['passwd'])){
        
         $Result = $BDD->query("SELECT * FROM `user` WHERE `user`='".$_POST['user']."' AND `passwd` = '".$_POST['passwd']."'");
         if($Result->rowCount()>0){
