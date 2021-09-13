@@ -1,5 +1,8 @@
-<?php
-    include 'pdo.php';
+<?php  
+    session_start();
+    include "functions.php";
+
+    $LoginValid = "";
 ?>
 
 <!DOCTYPE html>
@@ -16,8 +19,25 @@
 <body>
     <div id="container">
         <!-- zone de connexion -->
+        <?php 
+  try{
+        if(connection($BDD)){
+            if(check()){
+                include "menu.php";
+            }
+            else{
+                connection($BDD);
+            }
+        }
+    }
+
+    catch(Exception $e){
+        echo "J'ai eu un problème erreur :".$e->getMessage();
+    }
+?>
         
         <form action="verification.php" method="POST">
+        <b class='LoginValid'><?php echo $LoginValid ?></b>
             <h1>Connexion</h1>
             
             <label><b>Nom d'utilisateur</b></label>
