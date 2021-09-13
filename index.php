@@ -21,7 +21,7 @@ $LoginValid = "";
   try{
         if(connection($BDD)){
             if(check()){
-                include "menu.php";
+                header("location: verification.php");
             }
             else{
                 connection($BDD);
