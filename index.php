@@ -1,25 +1,27 @@
-<?php  
-    session_start();
-    include "functions.php";
+<?php
+session_start();
+include "functions.php";
 
-    $LoginValid = "";
+$LoginValid = "";
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="menu.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" media="screen" type="text/css" />
-    <title>Formulaire</title>
+    <title>Accueil</title>
 </head>
-
 <body>
-    <div id="container">
-        <!-- zone de connexion -->
-        <?php 
+
+
+<?php include('Header.php');?>
+
+  <div class="Contenu">
+
+<?php 
   try{
         if(connection($BDD)){
             if(check()){
@@ -35,11 +37,14 @@
         echo "J'ai eu un problème erreur :".$e->getMessage();
     }
 ?>
-        
-        <form action="verification.php" method="POST">
-        <b class='LoginValid'><?php echo $LoginValid ?></b>
+
+    <div class="container">
+
+        <form action="verification.php" method="post">
+
             <h1>Connexion</h1>
-            
+            <b class='LoginValid'><?php echo $LoginValid ?></b>
+
             <label><b>Nom d'utilisateur</b></label>
             <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
 
@@ -47,16 +52,22 @@
             <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
             <input type="submit" id='submit' value='LOGIN' >
+
             <?php
-            if(isset($_GET['erreur'])){
-                $err = $_GET['erreur'];
-                if($err==1 || $err==2)
-                    echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-            }
+                if(isset($_GET['erreur'])){
+                    $err = $_GET['erreur'];
+                    if($err==1 || $err==2)
+                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
+                }
             ?>
         </form>
     </div>
-</body>
-</body>
 
+    </div>
+   
+  
+
+    <div class="Footer">Copyright 2020 - 2030</div>
+    
+</body>
 </html>
