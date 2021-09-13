@@ -1,17 +1,19 @@
 <?php
-    class userConnexion{
+    class User{
 
         //Propriétés
-        private $user;
-        private $passwd;
-        private $admin;
+        private $_user;
+        private $_passwd;
+        private $_admin;
+        private $_bdd;
 
         //Méthodes
-        function __construct($serveur, $user, $passwd){
+        function __construct($user,$passwd,$admin,$bdd){
 
-            $this->user = $user;
-            $this->passwd = $passwd;
-            $this->admin = $admin;
+            $this->_user = $user;
+            $this->_passwd = $passwd;
+            $this->_admin = $admin;
+            $this->_bdd = $bdd;
         }
 
         public function SeConnecter($user,$passwd,$admin){
