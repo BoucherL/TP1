@@ -9,4 +9,6 @@ html{
 
 .container{
     background-color: aliceblue;
+    margin: 3vh 5vw;
+    width: 50%;
 }
