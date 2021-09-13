@@ -7,7 +7,7 @@ try{
     if (isset($_POST["submit"])) {
 
         // Inscription si les champs ne sont pas vides et si le nom d'utilisateur n'est pas utilisé
-        if(!empty($_POST['username']) AND !empty($_POST['passsword'])){
+        if(!empty($_POST['username']) AND !empty($_POST['password'])){
 
             $exist = $BDD->query("SELECT COUNT(*) FROM user WHERE username ='".$_POST['username']."'");
             $exist = $exist->fetch();
@@ -50,7 +50,7 @@ catch(Exception $e){
 </head>
 
 <body>
-    <div align="center">
+    <div style="text-align: center">
 
         <h2>Inscription</h2>
 
