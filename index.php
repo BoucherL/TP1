@@ -12,9 +12,9 @@
     <body>
         <?php
             include "session.php";
-            if($access != true){
-                $access = $UserLog->SeDeconnecter();
-            }
+            //if($access != true){
+            //    $access = $UserLog->SeDeconnecter();
+            //}
         ?>
     </body>
 </html>
