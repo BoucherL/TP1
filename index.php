@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $_SESSION['Logged'] = 0;
 ?>
 <!DOCTYPE html>
 <html lang="fr">
