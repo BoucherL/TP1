@@ -19,7 +19,7 @@ $LoginValid = "";
 
   <div class="Contenu">
 
-  <?php echo $access ?>
+  access = <?php echo $access ?>
 
 
     </div>
