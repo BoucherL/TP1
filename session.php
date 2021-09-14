@@ -26,7 +26,7 @@
         }else{
             $access = false;
             // - Si non connecté affiche formulaire de connexion
-            //$access = $User->Connexion();
+            $access = $User->Connexion();
         }
     }else{
         $errorMessage.= "Le site n'a pas accès à la BDD.";
