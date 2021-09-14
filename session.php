@@ -1,5 +1,5 @@
 <?php
-
+    include "Class/User.php";
 
     // - Gestion de la bdd
     $BDD = null;
@@ -14,7 +14,7 @@
         $errorMessage .= $e->getMessage();
     }
 
-    //$UserLog = new User($BDD); 
+    $UserLog = new User($BDD); 
 
     // - Session
     if(!is_null($BDD)){
