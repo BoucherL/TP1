@@ -46,7 +46,39 @@
         }
 
         public function Inscription($user,$passwd){
-            echo'inscription';
+
+            $ErrorValid = "";
+            try{
+
+                // Inscription si les champs ne sont pas vides et si le nom d'utilisateur n'est pas utilisé
+                if(!empty($user) AND !empty($passwd)){
+
+                    $exist = $BDD->query("SELECT COUNT(*) FROM user WHERE user ='".$user."'");
+                    $exist = $exist->fetch();
+
+                    if ($exist["COUNT(*)"] > 0) {
+                        $ValueValid = "Ce nom d'utilisateur est déja utilisé";
+                    } 
+                    else {
+                        $insert = $BDD->query("INSERT INTO user(username, password) VALUES('".$user."','".$passwd."')");
+                        
+                        if($insert->rowCount()>=1){
+                            header("Location: compte.php");
+                        }
+                        else {
+                            echo "Une erreur est survenue";
+                        }
+                    }
+                }
+                
+                else {
+                        $ErrorValid = 'Veuillez compléter tout les champs...';
+                    }
+
+            }
+            catch(Exception $e){
+                echo "J'ai eu un problème erreur :".$e->getMessage();
+            }
         }
 
         public function SeDeconnecter(){
