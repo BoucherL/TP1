@@ -44,11 +44,7 @@
         }
 
         public function Connexion(){
-            $afficheForm = true ;
 
-            echo $afficheForm;
-    
-            if($afficheForm){
             ?>
                 <div class="container">
 
@@ -70,7 +66,6 @@
 
                 </div>
             <?php
-            }
         }
 
         public function Inscription($user,$passwd){
