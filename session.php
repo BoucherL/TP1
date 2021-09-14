@@ -1,4 +1,5 @@
 <?php
+echo "coucou";
 include "Class/User.php";
 
 
@@ -17,5 +18,5 @@ try{
 
 $UserLog = new User($BDD); 
 
-echo "coucou";
+
 ?>
