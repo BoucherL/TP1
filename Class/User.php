@@ -51,8 +51,18 @@
                 if(!empty($user) AND !empty($passwd)){
 
                     $exist = $this->_bdd->query("SELECT COUNT(*) FROM user WHERE user ='".$user."'");
-                    print_r("SELECT COUNT(*) FROM user WHERE user = '".$user."'");
+                    $exist = $exist->fetch();
 
+                    if ($exist["COUNT(*)"] > 0) {
+                    } 
+                    else {
+                        $insert = $BDD->query("INSERT INTO user(username, password) VALUES('".$user."','".$passwd."')");
+                        
+                        if($insert->rowCount()>=1){}
+                        else {
+                            echo "Une erreur est survenue";
+                        }
+                    }
                 }
                 
                 else {}
