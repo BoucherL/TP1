@@ -7,12 +7,10 @@
     }
 
 
-    if(isset($_POST['submit'])){
-        echo " coucou ";
-        if($_POST['Btn1']){
+        if(isset($_POST['Btn1'])){
             echo "vous avez utilisé le bouton1";
             }
-            elseif($_POST['Btn2'])
+            elseif(isset($_POST['Btn2']))
             {
             echo "vous avez utilisé le bouton2";
             }
