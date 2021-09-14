@@ -5,6 +5,11 @@
     if(!isset($_SESSION['Logged'])){
         $_SESSION['Logged'] = 0 ;
     }
+
+    if(isset($_POST['submit'])){
+        $submitvalue = $_POST['submit'];
+        echo $submitvalue;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">

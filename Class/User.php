@@ -8,10 +8,7 @@
         private $_bdd;
 
         //Méthodes
-        function __construct($bdd){
-
-            $this->_bdd = $bdd;
-        }
+        function __construct($){}
 
         /*public function setIdUser($UserID){
             $Result = $this->_bdd->query("SELECT * FROM `user` WHERE `user`='".$UserID."' ");
@@ -36,14 +33,14 @@
                     <label><b>Mot de passe</b></label>
                     <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
-                    <input type="submit" class='submit' value='Login' >
-                    <input type="submit" class='submit' value='Register' >
+                    <input type="submit" class='submit' value='Login'>
+                    <input type="submit" class='submit' value='Register'>
                 </form>
 
             <?php
         }
 
-        public function Connexion(){
+        public function Connexion($user,$passwd,$bdd){
 
         }
 
