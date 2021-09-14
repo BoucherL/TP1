@@ -54,15 +54,12 @@
                     $exist = $exist->fetch();
 
                     if ($exist["COUNT(*)"] > 0) {
-                        echo'user exist';
                     } 
                     else {
                         $insert = $this->_bdd->query("INSERT INTO user(user, passwd) VALUES('".$user."','".$passwd."')");
-                        print_r("INSERT INTO user(user, passwd) VALUES('".$user."','".$passwd."')");
-                        echo' user add';
                         
                         if($insert->rowCount()>=1){
-                            echo'user is add';
+                            echo'Votre compte à été créé, veuillez vous connecter';
                         }
                         else {
                             echo "Une erreur est survenue";
