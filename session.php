@@ -14,7 +14,7 @@
         $errorMessage .= $e->getMessage();
     }
 
-    $UserLog = new User();
+    $UserLog = new User($BDD);
 
     if($_SESSION['Logged'] == 0){
         $UserLog->AfficheForm();

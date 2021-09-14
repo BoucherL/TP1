@@ -8,7 +8,9 @@
         private $_bdd;
 
         // - Méthodes
-        function __construct(){}
+        function __construct($bdd){
+            $this->_bdd = $bdd;
+        }
 
         public function setIdUser($UserID){
 
@@ -35,12 +37,12 @@
             <?php
         }
 
-        public function Connexion($user,$passwd,$bdd){
-
+        public function Connexion($user,$passwd){
+            echo'connexion';
         }
 
         public function Inscription($user,$passwd){
-
+            echo'inscription';
         }
 
         public function SeDeconnecter(){
