@@ -16,6 +16,10 @@
 
     $UserLog = new User();
 
+    if(isset($_POST['submit'])){
+        $UserLog->Autorisation($_POST["username"], $_POST["password"]);
+    }
+
     if($_SESSION['Logged'] == 0){
         $UserLog->AfficheForm();
     }

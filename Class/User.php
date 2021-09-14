@@ -22,7 +22,7 @@
         public function AfficheForm(){
             ?>
 
-                <form action="index.php" method="post">
+                <form action="" method="post">
 
                     <h3>Se connecter / S'inscrire</h3>
                     <b class='ErrorValid'><?php echo $ErrorValid ?></b>
@@ -38,6 +38,10 @@
                 </form>
 
             <?php
+        }
+
+        public function Autorisation($login, $passwd){
+            echo "coucou";
         }
 
         public function Connexion($user,$passwd,$bdd){
