@@ -12,9 +12,6 @@
     <body>
         <?php
             include "session.php";
-            if($access != true){
-                $access = $UserLog->SeDeconnecter();
-            }
         ?>
     </body>
 </html>
