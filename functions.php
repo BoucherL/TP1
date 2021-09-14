@@ -10,7 +10,7 @@ catch(Exception $e){
 
 
 // Connexion
-function connection($BDD){
+function Autorisation($BDD){
 
     if(isset($_POST['username'])){
        
