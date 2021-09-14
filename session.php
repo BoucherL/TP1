@@ -9,7 +9,7 @@
     try{
         $user = "admin";
         $pass = "admin";
-        $mabase = new PDO('mysql:host=192.168.64.204;dbname=TP1', $user, $pass);
+        $BDD = new PDO('mysql:host=192.168.64.204;dbname=TP1', $user, $pass);
     }catch(Exception $e){
         $errorMessage .= $e->getMessage();
     }
