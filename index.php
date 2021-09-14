@@ -5,6 +5,8 @@
     if(!isset($_SESSION['Logged'])){
         $_SESSION['Logged'] = 0 ;
     }
+
+    echo $_SESSION['Logged'];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
