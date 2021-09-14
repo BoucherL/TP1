@@ -57,7 +57,7 @@
                     $exist = $exist->fetch();
 
                     if ($exist["COUNT(*)"] > 0) {
-                        $ValueValid = "Ce nom d'utilisateur est déja utilisé";
+                        ?><script>console.log("Ce nom d'utilisateur est déja utilisé");</script><?php
                     } 
                     else {
                         $insert = $BDD->query("INSERT INTO user(username, password) VALUES('".$user."','".$passwd."')");
@@ -66,13 +66,13 @@
                             header("Location: compte.php");
                         }
                         else {
-                            echo "Une erreur est survenue";
+                            ?><script>console.log("Une erreur est survenue");</script><?php
                         }
                     }
                 }
                 
                 else {
-                        $ErrorValid = 'Veuillez compléter tout les champs...';
+                    ?><script>console.log("Veuillez compléter tout les champs");</script><?php
                     }
 
             }
