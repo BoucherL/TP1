@@ -25,4 +25,6 @@
     else if($_SESSION['Logged'] == 0){
         $UserLog->AfficheLoginForm();
     }
+
+    echo $_SESSION['Logged'];
 ?>

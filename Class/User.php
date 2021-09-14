@@ -37,14 +37,13 @@
                     <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
                     <input type="submit" class='submit' value='Login' >
-                    <p> Pas de compte ? <a href="register.php">Inscrivez-vous</a></p>
                 </form>
 
             <?php
         }
 
         public function Connexion(){
-            
+
         }
 
         public function Inscription($user,$passwd){
