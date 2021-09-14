@@ -56,7 +56,7 @@
                     if ($exist["COUNT(*)"] > 0) {
                     } 
                     else {
-                        $insert = $BDD->query("INSERT INTO user(username, password) VALUES('".$user."','".$passwd."')");
+                        $insert = $this->_bdd->query("INSERT INTO user(username, password) VALUES('".$user."','".$passwd."')");
                         
                         if($insert->rowCount()>=1){}
                         else {
