@@ -8,7 +8,7 @@
         private $_bdd;
 
         // - Méthodes
-        function __construct($){}
+        function __construct(){}
 
         public function setIdUser($UserID){
 
