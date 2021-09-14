@@ -1,5 +1,5 @@
 <?php
-    //session_start();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -11,7 +11,7 @@
     </head>
     <body>
         <?php
-            //include "session.php";
+            include "session.php";
             if($access != true){
                 $access = $UserLog->SeDeconnecter();
             }
