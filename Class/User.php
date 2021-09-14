@@ -50,6 +50,7 @@
                 // Inscription si les champs ne sont pas vides et si le nom d'utilisateur n'est pas utilisé
                 if(!empty($user) AND !empty($passwd)){
 
+                    $exist = $this->_bdd->query("SELECT COUNT(*) FROM user WHERE user ='".$user."'");
                     print_r("SELECT COUNT(*) FROM user WHERE user = '".$user."'");
 
                 }
