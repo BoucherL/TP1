@@ -2,7 +2,7 @@
 session_start();
 include "functions.php";
 
-$ValueValid = "";
+$RegisterValid = "";
 
 // - Add Inscription Form
 
@@ -26,32 +26,24 @@ $ValueValid = "";
 
         <!-- formulaire d'inscription-->
 
-        <form method="POST" action="">
+        <form action="index.php" method="post">
 
-            <table>
-                <tr>
-                    <td>
-                        <label for="pseudo"> Pseudo : </label>
-                        <input type="text" placeholder="Votre pseudo" name="pseudo" id="pseudo" value="<?php if(isset($pseudo)) { echo $pseudo; }?>"/>
-                    </td>
-                </tr>
+            <h1>Inscription</h1>
+            <b class='RegisterValid'><?php echo $RegisterValid ?></b>
 
-                <tr>
-                    <td>
-                        <label for="mdp"> Mot de passe : </label>
-                        <input type="password" placeholder="Votre mot de passe" name="mdp" id="mdp"  value="<?php if(isset($mdp)) { echo $mdp; }?>" />
-                    </td>
-                </tr>
+            <label><b>Nom d'utilisateur</b></label>
+            <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
 
-                <tr>
-                    <td>
-                        <input type="submit" name="submit" value="S'inscrire">
-                    </td>
-                </tr>
-            </table>
+            <label><b>Mot de passe</b></label>
+            <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+
+            <input type="submit" class='submit' value='Register' >
+            <p> Pas de compte ? <a href="register.php">Inscrivez-vous</a></p>
         </form>
 
     </div>
 </body>
 
 </html>
+
+
