@@ -14,6 +14,10 @@
             include "session.php";
             if($access != true){
                 $access = $UserLog->SeDeconnecter();
+                echo 'no';
+            }
+            else{
+                echo 'yes';
             }
         ?>
     </body>
