@@ -29,7 +29,7 @@
                     <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
                     <input type="submit" class='submit' value='Login'>
-                    <input type="submit" class='submit' value='register'>
+                    <input type="submit" class='submit' value='Register'>
                 </form>
 
             <?php
