@@ -4,6 +4,7 @@
     // - check if SESSION['Logged'] exist
     if(!isset($_SESSION['Logged'])){
         $_SESSION['Logged'] = 0 ;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
