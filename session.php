@@ -31,4 +31,7 @@
     }else{
         $errorMessage.= "Le site n'a pas accès à la BDD.";
     }
+
+
+    echo "coucou";
 ?>
