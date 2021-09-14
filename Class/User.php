@@ -57,8 +57,7 @@
                         echo'user exist';
                     } 
                     else {
-                        $insert = $this->_bdd->query("INSERT INTO user(username, password) VALUES('".$user."','".$passwd."')");
-                        print_r("INSERT INTO user(username, password) VALUES('".$user."','".$passwd."')");
+                        $insert = $this->_bdd->query("INSERT INTO user(user, passwd) VALUES('".$user."','".$passwd."')");
                         
                         if($insert->rowCount()>=1){
                             echo'user is add';
