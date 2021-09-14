@@ -19,7 +19,7 @@ $UserLog = new User($BDD);
 
 // - Session
 if(!is_null($BDD)){
-    echo $_SESSION["Logged"];
+    echo 'session = "'.$_SESSION["Logged"].'"';
     if ($_SESSION["Logged"] == 1 )){
         $access = true;
         
