@@ -24,6 +24,8 @@ if(!is_null($BDD)){
         
         $User->setIdUser($_SESSION["ID_User"]);
 
+        header('location: accueil.php');
+
         }
     }else{
         $access = false;
