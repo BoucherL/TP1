@@ -14,7 +14,6 @@
             {
             echo "vous avez utilisé le bouton2";
             }
-    }
 
 ?>
 <!DOCTYPE html>
