@@ -40,10 +40,6 @@
             <?php
         }
 
-        public function Autorisation($login, $passwd){
-            echo "coucou";
-        }
-
         public function Connexion($user,$passwd,$bdd){
 
         }
