@@ -6,11 +6,14 @@
         $_SESSION['Logged'] = 0 ;
     }
 
-    if($_POST['submit'] == 'Register') {
-        echo 'register';
-    }
-    else if($_POST['submit'] == 'Login') {
-        echo "login";
+
+    if(isset($_POST['submit'])){
+        if($_POST['Register'] == 'Register') {
+            echo 'register';
+        }
+        else if($_POST['Login'] == 'Login') {
+            echo "login";
+        }
     }
 
 ?>
