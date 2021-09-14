@@ -1,5 +1,5 @@
 <?php
-echo 'coucou';
+
 include "Class/User.php";
 
 
