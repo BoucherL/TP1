@@ -37,8 +37,12 @@
             <?php
         }
 
-        public function Connexion($user,$passwd){
+        public function Autorisation($user,$passwd){
             echo'connexion';
+        }
+
+        public function Connexion($user,$passwd){
+            
         }
 
         public function Inscription($user,$passwd){
