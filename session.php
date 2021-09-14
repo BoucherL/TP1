@@ -3,8 +3,6 @@
 include "Class/User.php";
 
 // - Gestion BDD
-$BDD = null;
-$access = null;
 $errorMessage="";
 
 try{
