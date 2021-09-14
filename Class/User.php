@@ -58,6 +58,8 @@
                     } 
                     else {
                         $insert = $this->_bdd->query("INSERT INTO user(user, passwd) VALUES('".$user."','".$passwd."')");
+                        print_r("INSERT INTO user(user, passwd) VALUES('".$user."','".$passwd."')");
+                        echo' user add';
                         
                         if($insert->rowCount()>=1){
                             echo'user is add';
