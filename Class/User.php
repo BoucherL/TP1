@@ -34,7 +34,6 @@
                     <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
                     <input type="submit" class='submit' value='Login'>
-                    <input type="submit" class='submit' value='Register'>
                 </form>
 
             <?php
@@ -50,33 +49,6 @@
 
         public function SeDeconnecter(){
 
-            // - Affiche formulaire
-            $Afficheform = true;
-            $access = true;
-
-            if( isset($_POST["logout"])){
-                // - Si déconnecté affiche formulaire de connexion
-                $_SESSION["Logged"] = false;
-                session_unset();
-                session_destroy();
-
-                $this->Connexion();
-                $AfficheForm = false;
-                $access = false;
-            }else{
-                $AfficheForm = true;
-            }
-    
-            if($AfficheForm){
-            ?>
-                <form action="" method="post" >
-                    <div >
-                        <input type="submit" value="Déconnexion" name="logout">
-                    </div>
-                </form>
-            <?php
-            }
-            return $access;
         }
 
         public function modifpassword($user,$passwd){
