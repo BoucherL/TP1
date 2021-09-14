@@ -1,7 +1,6 @@
 <?php
 
 include "Class/User.php";
-echo "coucou";
 
 // - Gestion BDD
 $BDD = null;
@@ -15,6 +14,8 @@ try{
 }catch(Exception $e){
     $errorMessage .= $e->getMessage();
 }
+
+echo "coucou";
 
 $UserLog = new User($BDD); 
 
