@@ -36,7 +36,7 @@ $RegisterValid = "";
             <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
             <input type="submit" class='submit' value='Register' >
-            <p> Pas de compte ? <a href="register.php">Inscrivez-vous</a></p>
+            <p> Déja un compte ? <a href="index.php">Connectez-vous</a></p>
         </form>
 
     </div>
