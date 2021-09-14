@@ -1,4 +1,5 @@
 <?php
+    include "Class/User.php";
 
     // - Gestion de la bdd
     $BDD = null;
@@ -13,7 +14,7 @@
         $errorMessage .= $e->getMessage();
     }
 
-//$UserLog = new User($BDD); 
+    $UserLog = new User($BDD); 
 
     // - Session
     if(!is_null($BDD)){
@@ -25,7 +26,7 @@
         }else{
             $access = false;
             // - Si non connecté affiche formulaire de connexion
-            $access = $Joueur1->Connexion();
+            $access = $User->Connexion();
         }
     }else{
         $errorMessage.= "Le site n'a pas accès à la BDD.";
