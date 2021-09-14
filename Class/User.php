@@ -51,13 +51,8 @@
                 if(!empty($user) AND !empty($passwd)){
 
                     $exist = $BDD->query("SELECT COUNT(*) FROM user WHERE user ='".$user."'");
-                    $exist = $exist->fetch();
+                    print_r("SELECT COUNT(*) FROM user WHERE user = '".$user."'");
 
-                    if ($exist["COUNT(*)"] > 0) { echo 'user exist';
-                    } 
-                    else {
-                        echo 'user not exist';
-                    }
                 }
                 
                 else {}
