@@ -1,7 +1,10 @@
 <?php
 session_start();
 include "functions.php";
-echo $_SESSION['Logged'];
+
+if(check()){
+    header('location: accueil.php');
+}
 
 $LoginValid = "";
 

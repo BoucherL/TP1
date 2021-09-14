@@ -2,6 +2,10 @@
 session_start();
 include "functions.php";
 
+if(check()){
+    header('location: accueil.php');
+}
+
 $RegisterValid = "";
 
 // - Add Inscription Form
