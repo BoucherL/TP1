@@ -43,13 +43,15 @@
                 $exist = $exist->fetch();
 
                 if ($exist["COUNT(*)"] > 0) {
-                    header('location: compte.php');
+                    $this->Connexion($user, $passwd);
                 }
                 else{echo'Veuillez vous inscrire avant de vous connecter';}
             }
         }
 
         public function Connexion($user,$passwd){
+            $this->_user = $user;
+            $this->_passwd = $passwd;
             
         }
 
@@ -62,6 +64,10 @@
                     $exist = $exist->fetch();
 
                     if ($exist["COUNT(*)"] > 0) {
+                        $admin = $this->_bdd->query("SELECT `IsAdmin` FROM `user` WHERE user ='".$user."'");
+                        $admin = $admin->fetch();
+                        echo $admin;
+
                     } 
                     else {
                         $insert = $this->_bdd->query("INSERT INTO user(user, passwd) VALUES('".$user."','".$passwd."')");
