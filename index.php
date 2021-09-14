@@ -8,12 +8,14 @@
 
 
     if(isset($_POST['submit'])){
-        if($_POST['Register'] == 'Register') {
-            echo 'register';
-        }
-        else if($_POST['Login'] == 'Login') {
-            echo "login";
-        }
+        echo " coucou ";
+        if($_POST['Btn1']){
+            echo "vous avez utilisé le bouton1";
+            }
+            elseif($_POST['Btn2'])
+            {
+            echo "vous avez utilisé le bouton2";
+            }
     }
 
 ?>

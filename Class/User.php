@@ -28,8 +28,8 @@
                     <label><b>Mot de passe</b></label>
                     <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
-                    <input type="submit" class='submit' name="Login" value='Login'>
-                    <input type="submit" class='submit' name="Register" value='Register'>
+                    <input type="submit" class='submit' name="Btn1" value='Login'>
+                    <input type="submit" class='submit' name="Btn2" value='Register'>
                 </form>
 
             <?php
