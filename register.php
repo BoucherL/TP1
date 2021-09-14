@@ -20,9 +20,7 @@ $RegisterValid = "";
 </head>
 
 <body>
-    <div style="text-align: center">
-
-        <h2>Inscription</h2>
+    <div class="container">
 
         <!-- formulaire d'inscription-->
 
