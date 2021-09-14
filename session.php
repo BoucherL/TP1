@@ -17,6 +17,6 @@
     $UserLog = new User($BDD);
 
     if($_SESSION['Logged'] == 0){
-        $UserLog->AfficheLoginForm();
+        $UserLog->AfficheForm();
     }
 ?>

@@ -22,13 +22,13 @@
             }
         }*/
 
-        public function AfficheLoginForm(){
+        public function AfficheForm(){
             ?>
 
                 <form action="index.php" method="post">
 
                     <h1>Connexion</h1>
-                    <b class='LoginValid'><?php echo $LoginValid ?></b>
+                    <b class='ErrorValid'><?php echo $ErrorValid ?></b>
 
                     <label><b>Nom d'utilisateur</b></label>
                     <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
@@ -37,6 +37,7 @@
                     <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
                     <input type="submit" class='submit' value='Login' >
+                    <input type="submit" class='submit' value='Register' >
                 </form>
 
             <?php
