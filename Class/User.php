@@ -1,23 +1,18 @@
 <?php
     class User{
 
-        //Propriétés
+        // - Propriétés
         private $_user;
         private $_passwd;
         private $_admin;
         private $_bdd;
 
-        //Méthodes
+        // - Méthodes
         function __construct($){}
 
-        /*public function setIdUser($UserID){
-            $Result = $this->_bdd->query("SELECT * FROM `user` WHERE `user`='".$UserID."' ");
-            if($tab = $Result->fetch()){ 
-                $this->_user = $tab['user']);
-                $this->_passwd = $tab['passwd']);
-                $this->_admin = $tab['IsAdmin']);
-            }
-        }*/
+        public function setIdUser($UserID){
+
+        }
 
         public function AfficheForm(){
             ?>
