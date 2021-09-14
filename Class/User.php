@@ -65,7 +65,6 @@
 
                     if ($exist["COUNT(*)"] > 0) {
                         $admin = $this->_bdd->query("SELECT `IsAdmin` FROM `user` WHERE user ='".$user."'");
-                        $admin = $admin->fetch();
                         echo $admin;
 
                     } 
