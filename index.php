@@ -8,11 +8,11 @@
 
 
         if(isset($_POST['Btn1'])){
-            echo "vous avez utilisé le bouton1";
+            $UserLog->Autorisation($_POST['username'], $_POST['password']);
             }
             elseif(isset($_POST['Btn2']))
             {
-            echo "vous avez utilisé le bouton2";
+            $UserLog->Inscription($_POST['username'], $_POST['password']);
             }
 
 ?>
