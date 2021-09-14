@@ -47,39 +47,15 @@
 
         public function Inscription($user,$passwd){
 
-            $ErrorValid = "";
-            try{
-
                 // Inscription si les champs ne sont pas vides et si le nom d'utilisateur n'est pas utilisé
                 if(!empty($user) AND !empty($passwd)){
 
-                    $exist = $BDD->query("SELECT COUNT(*) FROM user WHERE user ='".$user."'");
-                    $exist = $exist->fetch();
-
-                    if ($exist["COUNT(*)"] > 0) {
-                        ?><script>console.log("Ce nom d'utilisateur est déja utilisé");</script><?php
-                    } 
-                    else {
-                        $insert = $BDD->query("INSERT INTO user(username, password) VALUES('".$user."','".$passwd."')");
-                        
-                        if($insert->rowCount()>=1){
-                            header("Location: compte.php");
-                        }
-                        else {
-                            ?><script>console.log("Une erreur est survenue");</script><?php
-                        }
-                    }
+                    echo 'all entered';
                 }
                 
-                else {
-                    ?><script>console.log("Veuillez compléter tout les champs");</script><?php
-                    }
+                else { echo'empty';}
 
             }
-            catch(Exception $e){
-                echo "J'ai eu un problème erreur :".$e->getMessage();
-            }
-        }
 
         public function SeDeconnecter(){
 
