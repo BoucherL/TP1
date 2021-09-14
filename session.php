@@ -21,7 +21,7 @@
         if (isset($_SESSION["Logged"]) && $_SESSION["Logged"]===true){
             $access = true;
             if(isset($_SESSION["UserID"])){
-                //$User->setIdUser($_SESSION["UserID"]);
+                $User->setIdUser($_SESSION["UserID"]);
             }
         }else{
             $access = false;
