@@ -14,7 +14,7 @@ form{
     padding: 5vh 8vh;
 }
 
-form h1, form input, form b, form label{
+form h3, form input, form b, form label{
     text-align: center;
     display: block;
     margin: 1vh auto 2vh auto;

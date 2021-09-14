@@ -27,7 +27,7 @@
 
                 <form action="index.php" method="post">
 
-                    <h1>Connexion</h1>
+                    <h3>Se connecter / S'inscrire</h3>
                     <b class='ErrorValid'><?php echo $ErrorValid ?></b>
 
                     <label><b>Nom d'utilisateur</b></label>
