@@ -19,6 +19,7 @@ $UserLog = new User($BDD);
 
 // - Session
 if(!is_null($BDD)){
+    echo $_SESSION["Logged"];
     if ($_SESSION["Logged"] == 1 )){
         $access = true;
         
