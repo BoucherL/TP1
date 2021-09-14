@@ -43,7 +43,7 @@
             <?php
         }
 
-        public function Connexion($serveur,$user,$passwd,$bdd){
+        public function Connexion(){
             $afficheForm = true ;
 
             echo $afficheForm;
