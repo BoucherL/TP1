@@ -10,16 +10,6 @@
     <title>Accueil</title>
     </head>
     <body>
-        <?php
-            include "session.php";
-            echo 'coucou';
-            if($access != true){
-                $access = $UserLog->SeDeconnecter();
-                echo 'no';
-            }
-            else{
-                echo 'yes';
-            }
-        ?>
+        <?php echo "coucou" ?>
     </body>
 </html>
