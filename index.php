@@ -12,6 +12,7 @@
     <body>
         <?php
             include "session.php";
+            echo 'coucou';
             if($access != true){
                 $access = $UserLog->SeDeconnecter();
                 echo 'no';
