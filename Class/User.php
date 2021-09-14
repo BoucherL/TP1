@@ -45,6 +45,7 @@
                 if ($exist["COUNT(*)"] > 0) {
                     //$this->Connexion($user, $passwd);                        
                     $admin = $this->_bdd->query("SELECT `IsAdmin` FROM `user` WHERE user ='".$user."'");
+                    $admin = $admin->fetch();
                     echo $admin;
                 }
                 else{echo'Veuillez vous inscrire avant de vous connecter';}
