@@ -19,7 +19,3 @@ form h1, form input, form b, form label{
     display: block;
     margin: 1vh auto 2vh auto;
 }
-
-form input[type="submit"]{
-    display: inline-block;
-}
