@@ -6,13 +6,16 @@
     $access = null;
     $errorMessage="";
 
+    // - connexion à la bdd
+    $user = "admin";
+    $passwd = "admin";
     try{
-        $user = "admin";
-        $pass = "admin";
-        $BDD = new PDO('mysql:host=192.168.64.204;dbname=TP1', $user, $pass);
-    }catch(Exception $e){
-        $errorMessage .= $e->getMessage();
-    } 
+        $BDD = new PDO('mysql:host=192.168.64.204; dbname=TP1; charset=utf8', .$user. , .$passwd. );
+    }
+    catch(Exception $e){
+
+        echo "J'ai eu un problème erreur :".$e->getMessage();
+        }
 
 echo 'coucou';
 
