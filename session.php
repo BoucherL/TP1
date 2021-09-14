@@ -1,8 +1,7 @@
 <?php
-
+echo 'coucou';
 include "Class/User.php";
 
-echo "coucou";
 
 // - Gestion BDD
 $BDD = null;
