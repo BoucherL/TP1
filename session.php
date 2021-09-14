@@ -16,14 +16,9 @@
 
     $UserLog = new User($BDD);
 
-    // - check SESSION['Logged']
-
+    // - check if SESSION['Logged'] exist
     if(!isset(echo $_SESSION['Logged'])){
         $_SESSION['Logged'] = 0 ;
-        $UserLog->AfficheLoginForm();
-    }
-    else if($_SESSION['Logged'] == 0){
-        $UserLog->AfficheLoginForm();
     }
 
     echo $_SESSION['Logged'];
