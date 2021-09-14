@@ -45,12 +45,14 @@
 
         public function Connexion($serveur,$user,$passwd,$bdd){
             $afficheForm = true ;
+
+            echo "coucou";
     
             if($afficheForm){
             ?>
                 <div class="container">
 
-                    <!-- formulaire d'inscription-->
+                    <!-- formulaire d'inscription -->
 
                     <form action="index.php" method="post">
 
