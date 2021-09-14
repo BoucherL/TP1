@@ -14,24 +14,15 @@
         $errorMessage .= $e->getMessage();
     }
 
-    $UserLog = new User($BDD); 
+    $UserLog = new User($BDD);
 
-    // - Session
-    if(!is_null($BDD)){
-        if (isset($_SESSION["Logged"]) && $_SESSION["Logged"]===true){
-            $access = true;
-            if(isset($_SESSION["UserID"])){
-                $User->setIdUser($_SESSION["UserID"]);
-            }
-        }else{
-            $access = false;
-            // - Si non connecté affiche formulaire de connexion
-            $User->Connexion();
-        }
-    }else{
-        $errorMessage.= "Le site n'a pas accès à la BDD.";
+    // - check SESSION['Logged']
+
+    if(!isset(echo $_SESSION['Logged'])){
+        $_SESSION['Logged'] = 0 ;
+        $UserLog->AfficheLoginForm();
     }
-
-
-    echo "coucou";
+    else if($_SESSION['Logged'] == 0){
+        $UserLog->AfficheLoginForm();
+    }
 ?>
