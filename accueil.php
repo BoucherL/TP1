@@ -19,6 +19,8 @@ $LoginValid = "";
 
   <div class="Contenu">
 
+  <?php echo $access ?>
+
 
     </div>
     
