@@ -16,5 +16,10 @@
 
     $UserLog = new User($BDD);
 
+    // - check if SESSION['Logged'] exist
+    if(!isset($_SESSION['Logged'])){
+        $_SESSION['Logged'] = 0 ;
+    }
+
     echo $_SESSION['Logged'];
 ?>
