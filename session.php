@@ -16,8 +16,6 @@
 
     $UserLog = new User();
 
-    echo $_SESSION['Logged'];
-
     if($_SESSION['Logged'] == 0){
         $UserLog->AfficheForm();
     }

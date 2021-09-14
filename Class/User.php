@@ -22,7 +22,7 @@
         public function AfficheForm(){
             ?>
 
-                <form action="" method="post">
+                <form action="index.php" method="post">
 
                     <h3>Se connecter / S'inscrire</h3>
                     <b class='ErrorValid'><?php echo $ErrorValid ?></b>
