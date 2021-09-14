@@ -17,7 +17,7 @@
         public function AfficheForm(){
             ?>
 
-                <form action="index.php" method="post">
+                <form action="" method="post">
 
                     <h3>Se connecter / S'inscrire</h3>
                     <b class='ErrorValid'><?php echo $ErrorValid ?></b>
@@ -29,6 +29,7 @@
                     <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
                     <input type="submit" class='submit' value='Login'>
+                    <input type="submit" class='submit' value='register'>
                 </form>
 
             <?php

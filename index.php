@@ -6,7 +6,6 @@
         $_SESSION['Logged'] = 0 ;
     }
 
-    echo $_SESSION['Logged'];
 ?>
 <!DOCTYPE html>
 <html lang="fr">

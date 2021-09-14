@@ -17,7 +17,6 @@
     $UserLog = new User();
 
     if($_SESSION['Logged'] == 0){
-        echo"coucou";
         $UserLog->AfficheForm();
     }
 ?>
