@@ -45,6 +45,8 @@
 
         public function Connexion($serveur,$user,$passwd,$bdd){
             $afficheForm = true ;
+
+            echo $afficheForm;
     
             if($afficheForm){
             ?>
