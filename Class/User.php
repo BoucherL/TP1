@@ -38,7 +38,15 @@
         }
 
         public function Autorisation($user,$passwd){
-            echo'connexion';
+            if(!empty($user) AND !empty($passwd)){
+                $exist = $this->_bdd->query("SELECT COUNT(*) FROM user WHERE user ='".$user."' && passwd ='".$passwd."'");
+                $exist = $exist->fetch();
+
+                if ($exist["COUNT(*)"] > 0) {
+                    header('location: compte.php');
+                }
+                else{echo'Veuillez vous inscrire avant de vous connecter';}
+            }
         }
 
         public function Connexion($user,$passwd){
