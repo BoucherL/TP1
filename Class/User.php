@@ -8,7 +8,7 @@
         private $_bdd;
 
         // - Méthodes
-        function __construct($bdd){
+        public function __construct($bdd){
             $this->_bdd = $bdd;
         }
 
@@ -22,7 +22,7 @@
                 <form action="" method="post">
 
                     <h3>Se connecter / S'inscrire</h3>
-                    <b class='ErrorValid'><?php echo $ErrorValid ?></b>
+                    <b class='ErrorValid'><?php //echo $ErrorValid ?></b>
 
                     <label><b>Nom d'utilisateur</b></label>
                     <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
