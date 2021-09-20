@@ -1,6 +1,5 @@
 <?php
-    include "Class/User.php";
-
+    session_start();
     // - Gestion de la bdd
     $BDD = null;
     $access = null;
@@ -14,7 +13,7 @@
         $errorMessage .= $e->getMessage();
     }
 
-    $UserLog = new User($BDD);
+   /* $UserLog = new User($BDD);
 
     if($_SESSION['Logged'] == 0){
         $UserLog->AfficheForm();
@@ -25,7 +24,7 @@
     }
     elseif(isset($_POST['Btn2'])){
         $UserLog->Inscription($_POST['username'], $_POST['password']);
-    }
+    }*/
 
 
 ?>

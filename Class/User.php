@@ -2,6 +2,7 @@
     class User{
 
         // - Propriétés
+        private $_id;
         private $_user;
         private $_passwd;
         private $_admin;
@@ -16,10 +17,10 @@
 
         }
         //Fonction qui affiche le formulaire
-        public function AfficheForm(){
+        /*public function AfficheForm(){
             ?>
 
-                <form action="" method="post">
+                <form action="" method="POST">
 
                     <h3>Se connecter / S'inscrire</h3>
                     <b class='ErrorValid'><?php //echo $ErrorValid ?></b>
@@ -33,34 +34,45 @@
                     <input type="submit" class='submit' name="Btn1" value='Login'>
                     <input type="submit" class='submit' name="Btn2" value='Register'>
                 </form>
-
-            <?php
-        }
+            <?php if(isset($_POST['Btn1'])){
+                $user = strip_tags($_POST['username']);
+                $passwd = strip_tags($_POST['password']);
+                $User->Connexion($user,$passwd);
+            }else{
+                echo "<p>&nbsp;</p>";
+            }
+        }*/
         //Fonction qui verifie le login entrer dans le formulaire avec la bdd
-        public function Autorisation($user,$passwd){
+        /*public function Autorisation($user,$passwd){
             if(!empty($user) AND !empty($passwd)){
                 $exist = $this->_bdd->query("SELECT COUNT(*) FROM user WHERE user ='".$user."' && passwd ='".$passwd."'");
                 $exist = $exist->fetch();
-
+                $_SESSION["Logged"] = true;
+                $_SESSION["ID_User"] = $tab['id'];
+                
                 if ($exist["COUNT(*)"] > 0) {
                     //$this->Connexion($user, $passwd);                        
                     $admin = $this->_bdd->query("SELECT `IsAdmin` FROM `user` WHERE user ='".$user."'");
                     $admin = $admin->fetch();
-                    echo 'test';
-                    echo $admin[0];
+
                 }
                 else{echo'Veuillez vous inscrire avant de vous connecter';}
-            }
-        }
-
+            }*/
+        //Fonction qui permet de se connecter
         public function Connexion($user,$passwd){
-            $this->_user = $user;
-            $this->_passwd = $passwd;
-
-            // if(!empty($user) AND !empty($passwd)){
-                
-            // }
-            
+            $requete = $this->_bdd->prepare("SELECT * FROM `user` WHERE `user` = ? AND `passwd`= ?");
+            $requete->execute(array($user,$passwd));
+            $exist = $requete->rowCount();
+            if($exist == 1){
+                $donnee = $requete->fetch(); 
+                $_SESSION['id'] = $donnee['id'];
+                $this->_user = $donnee['user'];
+                $this->_passwd = $donnee['passwd'];
+                $this->_admin = $donnee['isAdmin'];
+                echo '<meta http-equiv="refresh" content="0">';
+            }else{
+                return "Erreur";
+            }  
         }
         //Fonction inscrire et insérer les données dans la bdd
         public function Inscription($user,$passwd){
@@ -93,10 +105,7 @@
             //Fonction se deconnecter de la session
         public function SeDeconnecter(){
             session_destroy();
-
-            header('Location: index.php');
-            
-        
+            echo '<meta http-equiv="refresh" content="0">';
         }
         //Fonction modifier le mot de passe du user quand il est connecter
         public function modifpassword($user,$passwd){

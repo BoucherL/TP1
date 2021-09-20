@@ -1,9 +1,10 @@
 <?php
-session_start();
-include "functions.php";
-
-
-$LoginValid = "";
+include "session.php";
+include "Class/User.php";
+if (!isset($_SESSION['id'])){
+  header("Location: index.php");
+}
+$user = new User($BDD);
 
 ?>
 
@@ -18,10 +19,14 @@ $LoginValid = "";
 <body>
 
   <div class="Contenu">
-    
-
-
+    <form action="" method="post">
+  <input type="submit" name="déco">
+</form>
     </div>
-    
+    <?php 
+    if(isset($_POST['déco'])){
+      $user->SeDeconnecter();
+    }
+    ?>
 </body>
 </html>
