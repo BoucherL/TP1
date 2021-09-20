@@ -5,7 +5,7 @@ try{
 }
 catch(Exception $e){
 
-    echo "J'ai eu un problème erreur :".$e->getMessage();
+    echo "Une erreur est survenue :".$e->getMessage();
     }
 
 
@@ -14,7 +14,7 @@ function Autorisation($BDD){
 
     if(isset($_POST['username'])){
        
-        $Result = $BDD->query("SELECT * FROM `user` WHERE `user`='".$_POST['username']."' AND `passwd` = '".$_POST['password']."'");
+        $Result = $BDD->query("SELECT * FROM `user` WHERE `user`='".$_POST['username']."' AND `passwd` = '".$_POST['passwd']."'");
         if($Result->rowCount()>0){
             $tab = $Result->fetch();
             $_SESSION["Logged"] = true;

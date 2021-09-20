@@ -55,6 +55,10 @@
         public function Connexion($user,$passwd){
             $this->_user = $user;
             $this->_passwd = $passwd;
+
+            // if(!empty($user) AND !empty($passwd)){
+                
+            // }
             
         }
 
@@ -87,14 +91,19 @@
             }
 
         public function SeDeconnecter(){
+            session_destroy()
 
+            header("location:index.php");
+            exit;
+            )
         }
 
         public function modifpassword($user,$passwd){
             
         }
-        public function admin(){
 
+        public function admin(){
+            
         }
 
 }
