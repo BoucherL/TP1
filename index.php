@@ -18,6 +18,9 @@
     <body>
         <?php
             include "session.php";
+            include "Class/User.php";
+
+            echo AfficheForm();
         ?>
     </body>
 </html>
