@@ -21,9 +21,7 @@ include "functions.php";
         <?php
             include "session.php";
 
-
-            $formulaire = new User($bdd);
-            $formulaire->AfficheForm();
+            
 
         ?>
     </body>
