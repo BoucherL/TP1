@@ -21,7 +21,7 @@
             include "session.php";
 
 
-            $formulaire = new User();
+            $formulaire = new User($bdd);
             $formulaire->AfficheForm();
 
         ?>
