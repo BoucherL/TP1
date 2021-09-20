@@ -1,4 +1,5 @@
 <?php
+include "functions.php";
     session_start();
 
     // - check if SESSION['Logged'] exist
