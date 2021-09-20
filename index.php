@@ -5,8 +5,9 @@
     if(!isset($_SESSION['Logged'])){
         $_SESSION['Logged'] = 0 ;
     }
-
+    include "Class/User.php";
 ?>
+    
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -18,10 +19,11 @@
     <body>
         <?php
             include "session.php";
-            include "Class/User.php";
+
 
             $formulaire = new User();
-            $test = $formulaire->AfficheForm();
+            $formulaire->AfficheForm();
+
         ?>
     </body>
 </html>
