@@ -46,6 +46,7 @@
                     //$this->Connexion($user, $passwd);                        
                     $admin = $this->_bdd->query("SELECT `IsAdmin` FROM `user` WHERE user ='".$user."'");
                     $admin = $admin->fetch();
+                    echo 'test';
                     echo $admin[0];
                 }
                 else{echo'Veuillez vous inscrire avant de vous connecter';}
