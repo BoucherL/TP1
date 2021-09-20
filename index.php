@@ -5,7 +5,7 @@
     if(!isset($_SESSION['Logged'])){
         $_SESSION['Logged'] = 0 ;
     }
-    include "Class/User.php";
+    
 ?>
     
 <!DOCTYPE html>
