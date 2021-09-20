@@ -20,7 +20,8 @@
             include "session.php";
             include "Class/User.php";
 
-            echo AfficheForm();
+            $formulaire = new User();
+            $test = $formulaire->AfficheForm();
         ?>
     </body>
 </html>
