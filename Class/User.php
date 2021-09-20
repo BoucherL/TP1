@@ -91,11 +91,11 @@
             }
             //Fonction se deconnecter de la session
         public function SeDeconnecter(){
-            session_destroy()
+            session_destroy();
 
             header('Location: index.php');
-            exit;
-            )
+            
+        
         }
         //Fonction modifier le mot de passe du user quand il est connecter
         public function modifpassword($user,$passwd){
