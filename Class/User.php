@@ -15,7 +15,7 @@
         public function setIdUser($UserID){
 
         }
-
+        //Fonction qui affiche le formulaire
         public function AfficheForm(){
             ?>
 
@@ -36,7 +36,7 @@
 
             <?php
         }
-
+        //Fonction qui verifie le login entrer dans le formulaire avec la bdd
         public function Autorisation($user,$passwd){
             if(!empty($user) AND !empty($passwd)){
                 $exist = $this->_bdd->query("SELECT COUNT(*) FROM user WHERE user ='".$user."' && passwd ='".$passwd."'");
@@ -61,7 +61,7 @@
             // }
             
         }
-
+        //Fonction inscrire et insérer les données dans la bdd
         public function Inscription($user,$passwd){
 
                 // Inscription si les champs ne sont pas vides et si le nom d'utilisateur n'est pas utilisé
@@ -89,7 +89,7 @@
                 else {}
 
             }
-
+            //Fonction se deconnecter de la session
         public function SeDeconnecter(){
             session_destroy()
 
@@ -97,11 +97,11 @@
             exit;
             )
         }
-
+        //Fonction modifier le mot de passe du user quand il est connecter
         public function modifpassword($user,$passwd){
             
         }
-
+        //Fonction Accés page admin, modifier les users, supprimer users
         public function admin(){
             
         }
