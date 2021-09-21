@@ -16,48 +16,7 @@
         public function setIdUser($UserID){
 
         }
-        //Fonction qui affiche le formulaire
-        /*public function AfficheForm(){
-            ?>
-
-                <form action="" method="POST">
-
-                    <h3>Se connecter / S'inscrire</h3>
-                    <b class='ErrorValid'><?php //echo $ErrorValid ?></b>
-
-                    <label><b>Nom d'utilisateur</b></label>
-                    <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
-
-                    <label><b>Mot de passe</b></label>
-                    <input type="password" placeholder="Entrer le mot de passe" name="password" required>
-
-                    <input type="submit" class='submit' name="Btn1" value='Login'>
-                    <input type="submit" class='submit' name="Btn2" value='Register'>
-                </form>
-            <?php if(isset($_POST['Btn1'])){
-                $user = strip_tags($_POST['username']);
-                $passwd = strip_tags($_POST['password']);
-                $User->Connexion($user,$passwd);
-            }else{
-                echo "<p>&nbsp;</p>";
-            }
-        }*/
-        //Fonction qui verifie le login entrer dans le formulaire avec la bdd
-        /*public function Autorisation($user,$passwd){
-            if(!empty($user) AND !empty($passwd)){
-                $exist = $this->_bdd->query("SELECT COUNT(*) FROM user WHERE user ='".$user."' && passwd ='".$passwd."'");
-                $exist = $exist->fetch();
-                $_SESSION["Logged"] = true;
-                $_SESSION["ID_User"] = $tab['id'];
-                
-                if ($exist["COUNT(*)"] > 0) {
-                    //$this->Connexion($user, $passwd);                        
-                    $admin = $this->_bdd->query("SELECT `IsAdmin` FROM `user` WHERE user ='".$user."'");
-                    $admin = $admin->fetch();
-
-                }
-                else{echo'Veuillez vous inscrire avant de vous connecter';}
-            }*/
+       
         //Fonction qui permet de se connecter
         public function Connexion($user,$passwd){
             $requete = $this->_bdd->prepare("SELECT * FROM `user` WHERE `user` = ? AND `passwd`= ?");
